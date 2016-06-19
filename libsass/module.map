@@ -1,0 +1,4 @@
+module libsass [system] {
+    header "include/sass.h"
+    export *
+}
