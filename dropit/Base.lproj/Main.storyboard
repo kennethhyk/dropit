@@ -669,20 +669,20 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="dropit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl" customClass="filedetectionView" customModule="dropit" customModuleProvider="target">
+                    <view key="view" id="m2S-Jp-Qdl" customClass="FileDetectionView" customModule="dropit" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdu-2C-cwL">
-                                <rect key="frame" x="104" y="20" width="92" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rdu-2C-cwL">
+                                <rect key="frame" x="104" y="20" width="92" height="11"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="dropit build 1.0 alpha" id="YRE-ht-SDZ">
                                     <font key="font" metaFont="system" size="8"/>
                                     <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIz-np-RSv">
-                                <rect key="frame" x="15" y="61" width="271" height="213"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HIz-np-RSv">
+                                <rect key="frame" x="14" y="257" width="4" height="17"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="vsi-eA-fmv">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>

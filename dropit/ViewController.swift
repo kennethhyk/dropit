@@ -7,27 +7,26 @@
 //
 
 import Cocoa
-import libsass
+import Witness
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, fileDetectionViewDeledate {
 	
-	@IBOutlet var fileDetection: filedetectionView!
+	@IBOutlet var fileDetection: FileDetectionView!
 	
+	var witness: Witness?
+	var witnessList: [String] = []
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	
-		
-		// Do any additional setup after loading the view.
+		fileDetection.delegate = self
 	}
-
+	
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		//disable title bar
-		self.view.window?.backgroundColor = NSColor.init(calibratedRed: 0.129, green: 0.129, blue: 0.129, alpha: 1.0)
+		self.view.window?.backgroundColor = DropitColor().black
 		self.view.window?.movableByWindowBackground = true
 		self.view.window?.titlebarAppearsTransparent = true
 		self.view.window?.styleMask |= NSFullSizeContentViewWindowMask
-		
 	}
 	
 	override var representedObject: AnyObject? {
@@ -36,6 +35,24 @@ class ViewController: NSViewController {
 		}
 	}
 
-
+	func createCampaign(filePath: String) -> Bool {
+		let newCampaign = Campaign(inputFilePath: filePath)
+		witnessList.appendContentsOf(newCampaign.inputFileList)
+		watchFile(newCampaign)
+		return true
+	}
+	
+	func watchFile(campaign: Campaign) {
+		let sassProcessingService: SassProcessingService = SassProcessingService()
+		for file: String in campaign.inputFileList {
+			sassProcessingService.compileRawFile(file)
+		}
+		self.witness = Witness(paths: self.witnessList, flags: .FileEvents, latency: 0.3) { events in
+			if ((events.first?.flags.contains(FileEventFlags.ItemModified)) != nil) {
+				print(events.first?.path)
+				sassProcessingService.compileRawFile((events.first?.path)!)
+			}
+		}
+	}
 }
 

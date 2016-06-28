@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9F0568591D1509C900A43F48 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0568581D1509C900A43F48 /* libstdc++.tbd */; };
-		9F05685B1D150BB400A43F48 /* sassProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05685A1D150BB400A43F48 /* sassProcess.swift */; };
+		9F05685B1D150BB400A43F48 /* SassProcessingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05685A1D150BB400A43F48 /* SassProcessingService.swift */; };
+		9F560A931D172459009706ED /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F560A921D172459009706ED /* Campaign.swift */; };
 		9F65CDB61D0A414F003968BC /* dropitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDB51D0A414F003968BC /* dropitTests.swift */; };
 		9F65CDC11D0A414F003968BC /* dropitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDC01D0A414F003968BC /* dropitUITests.swift */; };
+		9F6C9E461D188BD900038073 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C9E451D188BD900038073 /* SuccessView.swift */; };
 		9FB999141D11E2760017658A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB9990C1D11E2760017658A /* AppDelegate.swift */; };
 		9FB999151D11E2760017658A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB9990D1D11E2760017658A /* Assets.xcassets */; };
 		9FB999161D11E2760017658A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB9990E1D11E2760017658A /* Main.storyboard */; };
-		9FB999181D11E2760017658A /* filedetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB999111D11E2760017658A /* filedetectionView.swift */; };
+		9FB999181D11E2760017658A /* FileDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB999111D11E2760017658A /* FileDetectionView.swift */; };
 		9FB9991A1D11E2760017658A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB999131D11E2760017658A /* ViewController.swift */; };
-		9FE941A01D161F9A002F9E2F /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE941981D161F9A002F9E2F /* EventStream.swift */; };
-		9FE941A11D161F9A002F9E2F /* FileEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE941991D161F9A002F9E2F /* FileEvent.swift */; };
-		9FE941A21D161F9A002F9E2F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FE9419A1D161F9A002F9E2F /* Info.plist */; };
-		9FE941A31D161F9A002F9E2F /* Witness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE9419C1D161F9A002F9E2F /* Witness.swift */; };
-		9FE941AA1D161FBF002F9E2F /* Witness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE941A71D161F9A002F9E2F /* Witness.framework */; };
-		9FE941AB1D161FBF002F9E2F /* Witness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE941A71D161F9A002F9E2F /* Witness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FCA99D71D1622370036F79A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9FCA99BD1D1622370036F79A /* LICENSE */; };
+		9FCA99D91D1622370036F79A /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA99C01D1622370036F79A /* EventStream.swift */; };
+		9FCA99DA1D1622370036F79A /* FileEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA99C11D1622370036F79A /* FileEvent.swift */; };
+		9FCA99DB1D1622370036F79A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCA99C21D1622370036F79A /* Info.plist */; };
+		9FCA99DC1D1622370036F79A /* Witness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA99C41D1622370036F79A /* Witness.swift */; };
+		9FCA99F21D1622570036F79A /* Witness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCA99E71D1622370036F79A /* Witness.framework */; };
+		9FCA99F31D1622570036F79A /* Witness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCA99E71D1622370036F79A /* Witness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FE0BB4E1D18902E00FF2E03 /* DropitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0BB4D1D18902E00FF2E03 /* DropitColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,23 +43,23 @@
 			remoteGlobalIDString = 9F65CD9F1D0A414F003968BC;
 			remoteInfo = dropit;
 		};
-		9FE941A61D161F9A002F9E2F /* PBXContainerItemProxy */ = {
+		9FCA99E61D1622370036F79A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9FE9419D1D161F9A002F9E2F /* Witness.xcodeproj */;
+			containerPortal = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = FDFA9CC41BB2A38B009E3E96;
 			remoteInfo = Witness;
 		};
-		9FE941A81D161F9A002F9E2F /* PBXContainerItemProxy */ = {
+		9FCA99E81D1622370036F79A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9FE9419D1D161F9A002F9E2F /* Witness.xcodeproj */;
+			containerPortal = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = FDFA9CCE1BB2A38B009E3E96;
 			remoteInfo = WitnessTests;
 		};
-		9FE941AC1D161FBF002F9E2F /* PBXContainerItemProxy */ = {
+		9FCA99F41D1622570036F79A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9FE9419D1D161F9A002F9E2F /* Witness.xcodeproj */;
+			containerPortal = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = FDFA9CC31BB2A38B009E3E96;
 			remoteInfo = Witness;
@@ -63,13 +67,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9FE941AE1D161FBF002F9E2F /* Embed Frameworks */ = {
+		9FCA99F61D1622570036F79A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9FE941AB1D161FBF002F9E2F /* Witness.framework in Embed Frameworks */,
+				9FCA99F31D1622570036F79A /* Witness.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +82,8 @@
 
 /* Begin PBXFileReference section */
 		9F0568581D1509C900A43F48 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		9F05685A1D150BB400A43F48 /* sassProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sassProcess.swift; sourceTree = "<group>"; };
+		9F05685A1D150BB400A43F48 /* SassProcessingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SassProcessingService.swift; sourceTree = "<group>"; };
+		9F560A921D172459009706ED /* Campaign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		9F65CDA01D0A414F003968BC /* dropit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dropit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F65CDB11D0A414F003968BC /* dropitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dropitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F65CDB51D0A414F003968BC /* dropitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropitTests.swift; sourceTree = "<group>"; };
@@ -86,18 +91,21 @@
 		9F65CDBC1D0A414F003968BC /* dropitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dropitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F65CDC01D0A414F003968BC /* dropitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropitUITests.swift; sourceTree = "<group>"; };
 		9F65CDC21D0A414F003968BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F6C9E451D188BD900038073 /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		9FB9990C1D11E2760017658A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FB9990D1D11E2760017658A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FB9990F1D11E2760017658A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9FB999111D11E2760017658A /* filedetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = filedetectionView.swift; sourceTree = "<group>"; };
+		9FB999111D11E2760017658A /* FileDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetectionView.swift; sourceTree = "<group>"; };
 		9FB999121D11E2760017658A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB999131D11E2760017658A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9FE941981D161F9A002F9E2F /* EventStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStream.swift; sourceTree = "<group>"; };
-		9FE941991D161F9A002F9E2F /* FileEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEvent.swift; sourceTree = "<group>"; };
-		9FE9419A1D161F9A002F9E2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FE9419B1D161F9A002F9E2F /* Witness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Witness.h; sourceTree = "<group>"; };
-		9FE9419C1D161F9A002F9E2F /* Witness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Witness.swift; sourceTree = "<group>"; };
-		9FE9419D1D161F9A002F9E2F /* Witness.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Witness.xcodeproj; sourceTree = "<group>"; };
+		9FCA99BD1D1622370036F79A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9FCA99C01D1622370036F79A /* EventStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStream.swift; sourceTree = "<group>"; };
+		9FCA99C11D1622370036F79A /* FileEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEvent.swift; sourceTree = "<group>"; };
+		9FCA99C21D1622370036F79A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FCA99C31D1622370036F79A /* Witness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Witness.h; sourceTree = "<group>"; };
+		9FCA99C41D1622370036F79A /* Witness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Witness.swift; sourceTree = "<group>"; };
+		9FCA99C51D1622370036F79A /* Witness.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Witness.xcodeproj; sourceTree = "<group>"; };
+		9FE0BB4D1D18902E00FF2E03 /* DropitColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropitColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE941AA1D161FBF002F9E2F /* Witness.framework in Frameworks */,
+				9FCA99F21D1622570036F79A /* Witness.framework in Frameworks */,
 				9F0568591D1509C900A43F48 /* libstdc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,7 +138,8 @@
 		9F05685C1D1510C500A43F48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9FB999111D11E2760017658A /* filedetectionView.swift */,
+				9FB999111D11E2760017658A /* FileDetectionView.swift */,
+				9F6C9E451D188BD900038073 /* SuccessView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -146,8 +155,10 @@
 		9F05685E1D15251F00A43F48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9F05685A1D150BB400A43F48 /* sassProcess.swift */,
-				9FE941971D161F9A002F9E2F /* Witness */,
+				9F560A921D172459009706ED /* Campaign.swift */,
+				9F05685A1D150BB400A43F48 /* SassProcessingService.swift */,
+				9FCA99BB1D1622370036F79A /* Witness */,
+				9FE0BB4D1D18902E00FF2E03 /* DropitColor.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -205,24 +216,33 @@
 			path = dropit;
 			sourceTree = "<group>";
 		};
-		9FE941971D161F9A002F9E2F /* Witness */ = {
+		9FCA99BB1D1622370036F79A /* Witness */ = {
 			isa = PBXGroup;
 			children = (
-				9FE941981D161F9A002F9E2F /* EventStream.swift */,
-				9FE941991D161F9A002F9E2F /* FileEvent.swift */,
-				9FE9419A1D161F9A002F9E2F /* Info.plist */,
-				9FE9419B1D161F9A002F9E2F /* Witness.h */,
-				9FE9419C1D161F9A002F9E2F /* Witness.swift */,
-				9FE9419D1D161F9A002F9E2F /* Witness.xcodeproj */,
+				9FCA99BD1D1622370036F79A /* LICENSE */,
+				9FCA99BF1D1622370036F79A /* Witness */,
+				9FCA99C51D1622370036F79A /* Witness.xcodeproj */,
 			);
 			path = Witness;
 			sourceTree = SOURCE_ROOT;
 		};
-		9FE9419E1D161F9A002F9E2F /* Products */ = {
+		9FCA99BF1D1622370036F79A /* Witness */ = {
 			isa = PBXGroup;
 			children = (
-				9FE941A71D161F9A002F9E2F /* Witness.framework */,
-				9FE941A91D161F9A002F9E2F /* WitnessTests.xctest */,
+				9FCA99C01D1622370036F79A /* EventStream.swift */,
+				9FCA99C11D1622370036F79A /* FileEvent.swift */,
+				9FCA99C21D1622370036F79A /* Info.plist */,
+				9FCA99C31D1622370036F79A /* Witness.h */,
+				9FCA99C41D1622370036F79A /* Witness.swift */,
+			);
+			path = Witness;
+			sourceTree = "<group>";
+		};
+		9FCA99C61D1622370036F79A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA99E71D1622370036F79A /* Witness.framework */,
+				9FCA99E91D1622370036F79A /* WitnessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,12 +257,12 @@
 				9F65CD9C1D0A414F003968BC /* Sources */,
 				9F65CD9D1D0A414F003968BC /* Frameworks */,
 				9F65CD9E1D0A414F003968BC /* Resources */,
-				9FE941AE1D161FBF002F9E2F /* Embed Frameworks */,
+				9FCA99F61D1622570036F79A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9FE941AD1D161FBF002F9E2F /* PBXTargetDependency */,
+				9FCA99F51D1622570036F79A /* PBXTargetDependency */,
 			);
 			name = dropit;
 			productName = dropit;
@@ -322,8 +342,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9FE9419E1D161F9A002F9E2F /* Products */;
-					ProjectRef = 9FE9419D1D161F9A002F9E2F /* Witness.xcodeproj */;
+					ProductGroup = 9FCA99C61D1622370036F79A /* Products */;
+					ProjectRef = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -336,18 +356,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9FE941A71D161F9A002F9E2F /* Witness.framework */ = {
+		9FCA99E71D1622370036F79A /* Witness.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Witness.framework;
-			remoteRef = 9FE941A61D161F9A002F9E2F /* PBXContainerItemProxy */;
+			remoteRef = 9FCA99E61D1622370036F79A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9FE941A91D161F9A002F9E2F /* WitnessTests.xctest */ = {
+		9FCA99E91D1622370036F79A /* WitnessTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WitnessTests.xctest;
-			remoteRef = 9FE941A81D161F9A002F9E2F /* PBXContainerItemProxy */;
+			remoteRef = 9FCA99E81D1622370036F79A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -358,8 +378,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB999151D11E2760017658A /* Assets.xcassets in Resources */,
+				9FCA99D71D1622370036F79A /* LICENSE in Resources */,
+				9FCA99DB1D1622370036F79A /* Info.plist in Resources */,
 				9FB999161D11E2760017658A /* Main.storyboard in Resources */,
-				9FE941A21D161F9A002F9E2F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,13 +405,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F05685B1D150BB400A43F48 /* sassProcess.swift in Sources */,
-				9FB999181D11E2760017658A /* filedetectionView.swift in Sources */,
-				9FE941A11D161F9A002F9E2F /* FileEvent.swift in Sources */,
-				9FE941A31D161F9A002F9E2F /* Witness.swift in Sources */,
+				9FCA99D91D1622370036F79A /* EventStream.swift in Sources */,
+				9F560A931D172459009706ED /* Campaign.swift in Sources */,
+				9F05685B1D150BB400A43F48 /* SassProcessingService.swift in Sources */,
+				9FE0BB4E1D18902E00FF2E03 /* DropitColor.swift in Sources */,
+				9FB999181D11E2760017658A /* FileDetectionView.swift in Sources */,
+				9F6C9E461D188BD900038073 /* SuccessView.swift in Sources */,
 				9FB9991A1D11E2760017658A /* ViewController.swift in Sources */,
+				9FCA99DC1D1622370036F79A /* Witness.swift in Sources */,
 				9FB999141D11E2760017658A /* AppDelegate.swift in Sources */,
-				9FE941A01D161F9A002F9E2F /* EventStream.swift in Sources */,
+				9FCA99DA1D1622370036F79A /* FileEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,10 +447,10 @@
 			target = 9F65CD9F1D0A414F003968BC /* dropit */;
 			targetProxy = 9F65CDBD1D0A414F003968BC /* PBXContainerItemProxy */;
 		};
-		9FE941AD1D161FBF002F9E2F /* PBXTargetDependency */ = {
+		9FCA99F51D1622570036F79A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Witness;
-			targetProxy = 9FE941AC1D161FBF002F9E2F /* PBXContainerItemProxy */;
+			targetProxy = 9FCA99F41D1622570036F79A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

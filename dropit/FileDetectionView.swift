@@ -9,10 +9,12 @@
 import Cocoa
 import AppKit
 
-class filedetectionView: NSView {
+class FileDetectionView: NSView {
 	
 	var filePath: String = ""
 	@IBOutlet weak var consoleLabel: NSTextField!
+	var delegate: fileDetectionViewDeledate?
+	var successView: SuccessView = SuccessView(frame: CGRectMake(0, 0, 300 ,300))
 	
 	override var mouseDownCanMoveWindow: Bool {
 		return true
@@ -25,22 +27,31 @@ class filedetectionView: NSView {
 	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
+		
 		// Declare and register an array of accepted types
-		registerForDraggedTypes([NSFilenamesPboardType, NSURLPboardType, NSPasteboardTypeTIFF])
+		registerForDraggedTypes([NSFilenamesPboardType, NSURLPboardType])
 	}
 	
 	
 	let fileTypes = ["sass", "scss"]
 	var fileTypeIsOk = false
-	var droppedFilePath: String?
+	var isDirectory = false
 	
 	override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation {
-		if checkExtension(sender) {
+		if isDirectory(sender) {
+			isDirectory = true
 			fileTypeIsOk = true
 			return .Copy
 		} else {
-			fileTypeIsOk = false
-			return .None
+			if checkExtension(sender) {
+				fileTypeIsOk = true
+				successView = SuccessView(frame: CGRectMake(0, 0, 300 ,300))
+				self.addSubview(successView)
+				return .Copy
+			} else {
+				fileTypeIsOk = false
+				return .None
+			}
 		}
 	}
 	
@@ -52,14 +63,23 @@ class filedetectionView: NSView {
 		}
 	}
 	
+	override func draggingExited(sender: NSDraggingInfo?) {
+		successView.reverseCircle()
+		successView.reverseCheck()
+	}
+	
 	override func performDragOperation(sender: NSDraggingInfo) -> Bool {
 		if let board = sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray,
 			path = board[0] as? String {
 			// THIS IS WERE YOU GET THE PATH FOR THE DROPPED FILE
 			filePath = path
-			droppedFilePath = path
-			sassProcess(inputFilePath: droppedFilePath!)
-			consoleLabel.stringValue = droppedFilePath!
+			let campaignStatus = self.delegate?.createCampaign(filePath)
+			if (campaignStatus != nil) {
+				successView.drawCheck()
+			}
+			isDirectory = false
+//			successView.removeLayer()
+//			consoleLabel.stringValue = filePath
 			return true
 		}
 		return false
@@ -76,4 +96,26 @@ class filedetectionView: NSView {
 		return false
 	}
 	
+	func isDirectory(drag: NSDraggingInfo) -> Bool {
+		if let board = drag.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray,
+			path = board[0] as? String {
+			do {
+				var rsrc: AnyObject?
+				try NSURL(fileURLWithPath: path).getResourceValue(&rsrc, forKey: NSURLIsDirectoryKey)
+				if let isDir = rsrc as? NSNumber {
+					if isDir == true { return true }
+					else { return false }
+				}
+			} catch {
+				self.print("file path error in isDirectory()")
+				return false
+			}
+		}
+		return false
+	}
+	
+}
+
+protocol fileDetectionViewDeledate {
+	func createCampaign(filePath: String) -> Bool
 }
