@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F0568591D1509C900A43F48 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0568581D1509C900A43F48 /* libstdc++.tbd */; };
 		9F05685B1D150BB400A43F48 /* SassProcessingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05685A1D150BB400A43F48 /* SassProcessingService.swift */; };
+		9F50DDC31D224A43007AEAD9 /* NSBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50DDC21D224A43007AEAD9 /* NSBezierPathExtension.swift */; };
 		9F560A931D172459009706ED /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F560A921D172459009706ED /* Campaign.swift */; };
 		9F65CDB61D0A414F003968BC /* dropitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDB51D0A414F003968BC /* dropitTests.swift */; };
 		9F65CDC11D0A414F003968BC /* dropitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDC01D0A414F003968BC /* dropitUITests.swift */; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		9F0568581D1509C900A43F48 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		9F05685A1D150BB400A43F48 /* SassProcessingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SassProcessingService.swift; sourceTree = "<group>"; };
+		9F50DDC21D224A43007AEAD9 /* NSBezierPathExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBezierPathExtension.swift; sourceTree = "<group>"; };
 		9F560A921D172459009706ED /* Campaign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		9F65CDA01D0A414F003968BC /* dropit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dropit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F65CDB11D0A414F003968BC /* dropitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dropitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 			children = (
 				9FB999111D11E2760017658A /* FileDetectionView.swift */,
 				9F6C9E451D188BD900038073 /* SuccessView.swift */,
+				9F50DDC21D224A43007AEAD9 /* NSBezierPathExtension.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				9FE0BB4E1D18902E00FF2E03 /* DropitColor.swift in Sources */,
 				9FB999181D11E2760017658A /* FileDetectionView.swift in Sources */,
 				9F6C9E461D188BD900038073 /* SuccessView.swift in Sources */,
+				9F50DDC31D224A43007AEAD9 /* NSBezierPathExtension.swift in Sources */,
 				9FB9991A1D11E2760017658A /* ViewController.swift in Sources */,
 				9FCA99DC1D1622370036F79A /* Witness.swift in Sources */,
 				9FB999141D11E2760017658A /* AppDelegate.swift in Sources */,
