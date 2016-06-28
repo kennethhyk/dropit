@@ -116,6 +116,7 @@ class FileDetectionView: NSView {
 	
 }
 
+
 protocol fileDetectionViewDeledate {
 	func createCampaign(filePath: String) -> Bool
 }
