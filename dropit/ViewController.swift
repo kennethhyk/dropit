@@ -20,6 +20,27 @@ class ViewController: NSViewController, fileDetectionViewDeledate {
 		fileDetection.delegate = self
 	}
 	
+	func createCampaign(filePath: String) -> Bool {
+		let newCampaign = Campaign(inputPath: filePath)
+		witnessList.appendContentsOf(newCampaign.fileList)
+		watchFile(newCampaign)
+		return true
+	}
+	
+	func watchFile(campaign: Campaign) {
+		let sassProcessingService: SassProcessingService = SassProcessingService()
+		for file: String in campaign.fileList {
+			sassProcessingService.compileRawFile(file)
+		}
+		self.witness = Witness(paths: self.witnessList, flags: .FileEvents, latency: 0.3) { events in
+			if ((events.first?.flags.contains(FileEventFlags.ItemModified)) != nil) {
+				print(events.first?.path)
+				sassProcessingService.compileRawFile((events.first?.path)!)
+			}
+		}
+	}
+
+/*=========== System Callbacks ============*/
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		//disable title bar
@@ -32,26 +53,6 @@ class ViewController: NSViewController, fileDetectionViewDeledate {
 	override var representedObject: AnyObject? {
 		didSet {
 		// Update the view, if already loaded.
-		}
-	}
-
-	func createCampaign(filePath: String) -> Bool {
-		let newCampaign = Campaign(inputFilePath: filePath)
-		witnessList.appendContentsOf(newCampaign.inputFileList)
-		watchFile(newCampaign)
-		return true
-	}
-	
-	func watchFile(campaign: Campaign) {
-		let sassProcessingService: SassProcessingService = SassProcessingService()
-		for file: String in campaign.inputFileList {
-			sassProcessingService.compileRawFile(file)
-		}
-		self.witness = Witness(paths: self.witnessList, flags: .FileEvents, latency: 0.3) { events in
-			if ((events.first?.flags.contains(FileEventFlags.ItemModified)) != nil) {
-				print(events.first?.path)
-				sassProcessingService.compileRawFile((events.first?.path)!)
-			}
 		}
 	}
 }

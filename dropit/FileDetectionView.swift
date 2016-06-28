@@ -12,9 +12,10 @@ import AppKit
 class FileDetectionView: NSView {
 	
 	var filePath: String = ""
-	@IBOutlet weak var consoleLabel: NSTextField!
 	var delegate: fileDetectionViewDeledate?
 	var successView: SuccessView = SuccessView(frame: CGRectMake(0, 0, 300 ,300))
+	@IBOutlet weak var backgroundImage: NSImageView!
+	@IBOutlet weak var consoleLabel: NSTextField!
 	
 	override var mouseDownCanMoveWindow: Bool {
 		return true
@@ -35,23 +36,17 @@ class FileDetectionView: NSView {
 	
 	let fileTypes = ["sass", "scss"]
 	var fileTypeIsOk = false
-	var isDirectory = false
 	
 	override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation {
-		if isDirectory(sender) {
-			isDirectory = true
+		if isValidDrop(sender) {
 			fileTypeIsOk = true
+			successView.removeFromSuperview()
+			successView = SuccessView(frame: CGRectMake(0, 0, 300 ,300))
+			self.addSubview(successView)
 			return .Copy
 		} else {
-			if checkExtension(sender) {
-				fileTypeIsOk = true
-				successView = SuccessView(frame: CGRectMake(0, 0, 300 ,300))
-				self.addSubview(successView)
-				return .Copy
-			} else {
-				fileTypeIsOk = false
-				return .None
-			}
+			fileTypeIsOk = false
+			return .None
 		}
 	}
 	
@@ -74,28 +69,14 @@ class FileDetectionView: NSView {
 			filePath = path
 			let campaignStatus = self.delegate?.createCampaign(filePath)
 			if (campaignStatus != nil) {
-				successView.drawCheck()
+				successView.processSucceedAnimation()
 			}
-			isDirectory = false
-//			successView.removeLayer()
-//			consoleLabel.stringValue = filePath
 			return true
 		}
 		return false
 	}
 	
-	func checkExtension(drag: NSDraggingInfo) -> Bool {
-		if let board = drag.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray,
-			path = board[0] as? String {
-			let url = NSURL(fileURLWithPath: path)
-			if let fileExtension = url.pathExtension?.lowercaseString {
-				return fileTypes.contains(fileExtension)
-			}
-		}
-		return false
-	}
-	
-	func isDirectory(drag: NSDraggingInfo) -> Bool {
+	func isValidDrop(drag: NSDraggingInfo) -> Bool {
 		if let board = drag.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray,
 			path = board[0] as? String {
 			do {
@@ -103,16 +84,19 @@ class FileDetectionView: NSView {
 				try NSURL(fileURLWithPath: path).getResourceValue(&rsrc, forKey: NSURLIsDirectoryKey)
 				if let isDir = rsrc as? NSNumber {
 					if isDir == true { return true }
-					else { return false }
 				}
 			} catch {
-				self.print("file path error in isDirectory()")
+				self.print("file path error in Directory")
 				return false
+			}
+			
+			let url = NSURL(fileURLWithPath: path)
+			if let fileExtension = url.pathExtension?.lowercaseString {
+				return fileTypes.contains(fileExtension)
 			}
 		}
 		return false
 	}
-	
 }
 
 

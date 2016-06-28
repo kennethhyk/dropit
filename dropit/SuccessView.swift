@@ -11,8 +11,9 @@ import AppKit
 
 class SuccessView: NSView {
 	
-	let circlePathLayer = CAShapeLayer()
 	let circleRadius: CGFloat = 80.0
+	let circlePathLayer = CAShapeLayer()
+	let innerCirclePathLayer = CAShapeLayer()
 	let checkPathLayer =  CAShapeLayer()
 
     override func drawRect(dirtyRect: NSRect) {
@@ -31,8 +32,32 @@ class SuccessView: NSView {
 	func drawCircle() {
 		let circle: NSBezierPath = NSBezierPath()
 		circle.appendBezierPathWithArcWithCenter(NSPoint(x: 150, y: 150), radius: circleRadius, startAngle: -90, endAngle: 270)
-		NSBezierPathToCAShapeLayer(circle, pathLayer: circlePathLayer, strokeColor: DropitColor().green, lineWidth: 10)
+		NSBezierPathToCAShapeLayer(circle, pathLayer: circlePathLayer, strokeColor: DropitColor().green, fillColor: NSColor.clearColor(), lineWidth: 10)
 		createStrokeEndAnimation(circlePathLayer, duration: 0.5, fromValue: 0.0, toValue: 1.0, timingFunction: kCAMediaTimingFunctionEaseInEaseOut, removedOnCompletion: false, completionBlock: nil)
+		
+		let innerCircle: NSBezierPath = NSBezierPath()
+		innerCircle.appendBezierPathWithArcWithCenter(NSPoint(x: 150, y: 150), radius: circleRadius-5, startAngle: -90, endAngle: 270)
+		NSBezierPathToCAShapeLayer(innerCircle, pathLayer: innerCirclePathLayer, strokeColor: NSColor.clearColor(), fillColor: DropitColor().black, lineWidth: 0)
+	}
+	
+	func processSucceedAnimation() {
+		self.circlePathLayer.removeAllAnimations()
+		self.circlePathLayer.fillColor = DropitColor().green.CGColor
+		CATransaction.begin()
+		let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform")
+		pathAnimation.duration = 0.5
+		var tr: CATransform3D = CATransform3DIdentity
+		tr = CATransform3DScale(tr, 0, 0, 1)
+		pathAnimation.toValue = NSValue(CATransform3D: tr)
+		pathAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+		pathAnimation.removedOnCompletion = false
+		pathAnimation.fillMode = kCAFillModeForwards
+		CATransaction.setCompletionBlock({
+			self.drawCheck()
+		})
+		self.innerCirclePathLayer.addAnimation(pathAnimation, forKey: "transform")
+		CATransaction.commit()
+
 	}
 	
 	func drawCheck() {
@@ -40,8 +65,8 @@ class SuccessView: NSView {
 		check.moveToPoint(NSPoint(x: 110, y: 164))
 		check.lineToPoint(NSPoint(x: 134, y: 182))
 		check.lineToPoint(NSPoint(x: 188, y: 124))
-		NSBezierPathToCAShapeLayer(check, pathLayer: checkPathLayer, strokeColor: DropitColor().green, lineWidth: 20)
-		createStrokeEndAnimation(checkPathLayer, duration: 0.5, fromValue: 0.0, toValue: 0.5, timingFunction: kCAMediaTimingFunctionEaseInEaseOut, removedOnCompletion: false) { (Void) in
+		self.NSBezierPathToCAShapeLayer(check, pathLayer: self.checkPathLayer, strokeColor: DropitColor().black, fillColor: NSColor.clearColor(), lineWidth: 20)
+		self.createStrokeEndAnimation(self.checkPathLayer, duration: 0.5, fromValue: 0.0, toValue: 0.55, timingFunction: kCAMediaTimingFunctionEaseInEaseOut, removedOnCompletion: false) { (Void) in
 			let delay = 1 * Double(NSEC_PER_SEC)
 			let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
 			dispatch_after(time, dispatch_get_main_queue()) {
@@ -51,27 +76,20 @@ class SuccessView: NSView {
 	}
 	
 	func reverseCircle() {
+		self.circlePathLayer.fillColor = NSColor.clearColor().CGColor
 		self.circlePathLayer.removeAllAnimations()
 		createStrokeEndAnimation(circlePathLayer, duration: 0.5, fromValue: (self.circlePathLayer.presentationLayer()?.strokeEnd)!, toValue: 0.0, timingFunction: kCAMediaTimingFunctionEaseInEaseOut, removedOnCompletion: false) { (Void) in
-			self.circlePathLayer.hidden = true
+			self.removeLayer()
 		}
 	}
 	
-	func reverseCheck() {
-		self.checkPathLayer.removeAllAnimations()
-		createStrokeEndAnimation(checkPathLayer, duration: 0.5, fromValue: (self.checkPathLayer.presentationLayer()?.strokeEnd)!, toValue: 0.0, timingFunction: kCAMediaTimingFunctionEaseInEaseOut, removedOnCompletion: false) { (Void) in
-			self.checkPathLayer.hidden = true
-		}
-	}
-
-	
-	func NSBezierPathToCAShapeLayer(bezierPath: NSBezierPath, pathLayer: CAShapeLayer, strokeColor: NSColor, lineWidth: CGFloat) {
+	func NSBezierPathToCAShapeLayer(bezierPath: NSBezierPath, pathLayer: CAShapeLayer, strokeColor: NSColor, fillColor: NSColor,lineWidth: CGFloat) {
 		pathLayer.frame = self.layer!.bounds
 		pathLayer.bounds = CGRectMake(50, 50, 200, 200)
 		pathLayer.geometryFlipped = true
 		pathLayer.path = bezierPath.CGPath
 		pathLayer.strokeColor = strokeColor.CGColor
-		pathLayer.fillColor = nil
+		pathLayer.fillColor = fillColor.CGColor
 		pathLayer.lineWidth = lineWidth
 		pathLayer.lineJoin = kCALineJoinRound
 		pathLayer.lineCap = kCALineCapRound
@@ -94,7 +112,12 @@ class SuccessView: NSView {
 	
 	func removeLayer() {
 		self.circlePathLayer.hidden = true
+		self.innerCirclePathLayer.hidden = true
 		self.checkPathLayer.hidden = true
-		self.removeFromSuperview()
+		let delay = 1 * Double(NSEC_PER_SEC)
+		let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+		dispatch_after(time, dispatch_get_main_queue()) {
+			self.removeFromSuperview()
+		}
 	}
 }

@@ -9,30 +9,30 @@
 import Cocoa
 
 class Campaign: NSObject {
-	var inputFilePath: String = ""
-	var inputFileList: [String] = []
+	var inputPath: String = ""
+	var fileList: [String] = []
 	var campaignStatus: CampaignStatusEnum = CampaignStatusEnum.NONE
 	
-	init(inputFilePath: String) {
+	init(inputPath: String) {
 		super.init()
-		self.inputFilePath = inputFilePath
-		self.inputFileList = populateInputFileList()
+		self.inputPath = inputPath
+		self.fileList = populateInputFileList()
 	}
 	
 	private func populateInputFileList() -> [String]{
-		if isDirectory(self.inputFilePath) {
+		if isDirectory(self.inputPath) {
 			let fileManager: NSFileManager = NSFileManager()
-			let files = fileManager.enumeratorAtPath(self.inputFilePath)
+			let files = fileManager.enumeratorAtPath(self.inputPath)
 			while let file = files?.nextObject() {
 				if isFileTypeOk(file as! String) {
-					self.inputFileList.append(self.inputFilePath + "/" + (file as! String))
+					self.fileList.append(self.inputPath + "/" + (file as! String))
 				}
 			}
 		} else {
-			inputFileList.append(self.inputFilePath)
+			fileList.append(self.inputPath)
 		}
-		print(self.inputFileList)
-		return self.inputFileList
+		print(self.fileList)
+		return self.fileList
 	}
 	
 	private func isFileTypeOk(path: String) -> Bool {

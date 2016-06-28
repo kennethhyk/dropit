@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -683,20 +684,32 @@
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIz-np-RSv">
                                 <rect key="frame" x="22" y="134" width="256" height="33"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="drop .SASS here" id="vsi-eA-fmv">
-                                    <font key="font" size="22" name="COCOGOOSE"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="drop your .SASS here" id="vsi-eA-fmv">
+                                    <font key="font" size="16" name="COCOGOOSE"/>
                                     <color key="textColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-2c-RAl">
+                                <rect key="frame" x="85" y="85" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yhG-2c-RAl" secondAttribute="height" multiplier="1:1" id="7jK-ne-Cwo"/>
+                                    <constraint firstAttribute="height" constant="130" id="g5I-J9-Ryh"/>
+                                    <constraint firstAttribute="width" constant="130" id="mUI-on-vGO"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pinkFileIcon" id="N5K-d2-UHr"/>
+                            </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="yhG-2c-RAl" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="2nr-o5-kKt"/>
                             <constraint firstItem="HIz-np-RSv" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="8OC-FV-Dcs"/>
+                            <constraint firstItem="yhG-2c-RAl" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="IsW-9M-HC0"/>
                             <constraint firstAttribute="bottom" secondItem="rdu-2C-cwL" secondAttribute="bottom" constant="20" id="JWh-81-Llw"/>
                             <constraint firstItem="rdu-2C-cwL" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Xy5-lp-nxB"/>
                             <constraint firstItem="HIz-np-RSv" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="skV-Na-F2r"/>
                         </constraints>
                         <connections>
+                            <outlet property="backgroundImage" destination="yhG-2c-RAl" id="MPt-Wm-Sf3"/>
                             <outlet property="consoleLabel" destination="HIz-np-RSv" id="xYZ-zi-0XE"/>
                         </connections>
                     </view>
@@ -709,4 +722,7 @@
             <point key="canvasLocation" x="75" y="668"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pinkFileIcon" width="359" height="533"/>
+    </resources>
 </document>
