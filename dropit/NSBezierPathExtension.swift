@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AppKit
 
 extension NSBezierPath {
 	
@@ -17,9 +18,6 @@ extension NSBezierPath {
 		}
 	}
 	
-	/// Transforms the NSBezierPath into a CGPathRef
-	///
-	/// :returns: The transformed NSBezierPath
 	private func transformToCGPath() -> CGPathRef {
 		
 		// Create path

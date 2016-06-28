@@ -65,7 +65,6 @@ class FileDetectionView: NSView {
 	
 	override func draggingExited(sender: NSDraggingInfo?) {
 		successView.reverseCircle()
-		successView.reverseCheck()
 	}
 	
 	override func performDragOperation(sender: NSDraggingInfo) -> Bool {

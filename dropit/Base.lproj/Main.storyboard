@@ -681,20 +681,20 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HIz-np-RSv">
-                                <rect key="frame" x="14" y="257" width="4" height="17"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="vsi-eA-fmv">
-                                    <font key="font" metaFont="system"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIz-np-RSv">
+                                <rect key="frame" x="22" y="134" width="256" height="33"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="drop .SASS here" id="vsi-eA-fmv">
+                                    <font key="font" size="22" name="COCOGOOSE"/>
                                     <color key="textColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="HIz-np-RSv" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="EJb-tT-1e8"/>
+                            <constraint firstItem="HIz-np-RSv" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="8OC-FV-Dcs"/>
                             <constraint firstAttribute="bottom" secondItem="rdu-2C-cwL" secondAttribute="bottom" constant="20" id="JWh-81-Llw"/>
                             <constraint firstItem="rdu-2C-cwL" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Xy5-lp-nxB"/>
-                            <constraint firstItem="HIz-np-RSv" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="26" id="tSq-YU-7wl"/>
+                            <constraint firstItem="HIz-np-RSv" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="skV-Na-F2r"/>
                         </constraints>
                         <connections>
                             <outlet property="consoleLabel" destination="HIz-np-RSv" id="xYZ-zi-0XE"/>
