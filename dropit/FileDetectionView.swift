@@ -67,8 +67,8 @@ class FileDetectionView: NSView {
 			path = board[0] as? String {
 			// THIS IS WERE YOU GET THE PATH FOR THE DROPPED FILE
 			filePath = path
-			let campaignStatus = self.delegate?.createCampaign(filePath)
-			if (campaignStatus != nil) {
+			let campaign = self.delegate?.createCampaign(filePath)
+			if (campaign?.campaignStatus == Campaign.CampaignStatusEnum.SUCCEED) {
 				successView.processSucceedAnimation()
 			}
 			return true
@@ -101,5 +101,5 @@ class FileDetectionView: NSView {
 
 
 protocol fileDetectionViewDeledate {
-	func createCampaign(filePath: String) -> Bool
+	func createCampaign(filePath: String) -> Campaign
 }

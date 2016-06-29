@@ -15,16 +15,12 @@ class ViewController: NSViewController, fileDetectionViewDeledate {
 	
 	var witness: Witness?
 	var witnessList: [String] = []
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		fileDetection.delegate = self
-	}
 	
-	func createCampaign(filePath: String) -> Bool {
+	func createCampaign(filePath: String) -> Campaign {
 		let newCampaign = Campaign(inputPath: filePath)
 		witnessList.appendContentsOf(newCampaign.fileList)
 		watchFile(newCampaign)
-		return true
+		return newCampaign
 	}
 	
 	func watchFile(campaign: Campaign) {
@@ -41,6 +37,11 @@ class ViewController: NSViewController, fileDetectionViewDeledate {
 	}
 
 /*=========== System Callbacks ============*/
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		fileDetection.delegate = self
+	}
+	
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		//disable title bar

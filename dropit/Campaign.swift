@@ -31,7 +31,6 @@ class Campaign: NSObject {
 		} else {
 			fileList.append(self.inputPath)
 		}
-		print(self.fileList)
 		return self.fileList
 	}
 	
