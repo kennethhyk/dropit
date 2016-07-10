@@ -7,16 +7,34 @@
 //
 
 import Cocoa
+import SwiftFSWatcher
 
 class Campaign: NSObject {
 	var inputPath: String = ""
 	var fileList: [String] = []
 	var campaignStatus: CampaignStatusEnum = CampaignStatusEnum.NONE
+	let fileWatcher = SwiftFSWatcher()
 	
 	init(inputPath: String) {
 		super.init()
 		self.inputPath = inputPath
 		self.fileList = populateInputFileList()
+		let sassProcessingService: SassProcessingService = SassProcessingService()
+		for file: String in self.fileList {
+			sassProcessingService.compileRawFile(file)
+		}
+		fileWatcher.watchingPaths = self.fileList
+		fileWatcher.watch { changeEvents in
+			for ev in changeEvents {
+				print("eventPath: \(ev.eventPath), eventFlag: \(ev.eventFlag), eventId: \(ev.eventId)")
+				
+				if ev.eventFlag == (kFSEventStreamEventFlagItemIsFile + kFSEventStreamEventFlagItemInodeMetaMod + kFSEventStreamEventFlagItemModified) {
+					print("file modified at: \(ev.eventPath)")
+					sassProcessingService.compileRawFile(ev.eventPath)
+					
+				}
+			}
+		}
 	}
 	
 	private func populateInputFileList() -> [String]{

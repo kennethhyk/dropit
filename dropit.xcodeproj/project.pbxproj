@@ -14,18 +14,13 @@
 		9F65CDB61D0A414F003968BC /* dropitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDB51D0A414F003968BC /* dropitTests.swift */; };
 		9F65CDC11D0A414F003968BC /* dropitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDC01D0A414F003968BC /* dropitUITests.swift */; };
 		9F6C9E461D188BD900038073 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C9E451D188BD900038073 /* SuccessView.swift */; };
+		9FB2261E1D3227B60020509A /* SwiftFSWatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB2261D1D3227B60020509A /* SwiftFSWatcher.framework */; };
+		9FB2261F1D3227B60020509A /* SwiftFSWatcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB2261D1D3227B60020509A /* SwiftFSWatcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FB999141D11E2760017658A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB9990C1D11E2760017658A /* AppDelegate.swift */; };
 		9FB999151D11E2760017658A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB9990D1D11E2760017658A /* Assets.xcassets */; };
 		9FB999161D11E2760017658A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB9990E1D11E2760017658A /* Main.storyboard */; };
 		9FB999181D11E2760017658A /* FileDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB999111D11E2760017658A /* FileDetectionView.swift */; };
 		9FB9991A1D11E2760017658A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB999131D11E2760017658A /* ViewController.swift */; };
-		9FCA99D71D1622370036F79A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9FCA99BD1D1622370036F79A /* LICENSE */; };
-		9FCA99D91D1622370036F79A /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA99C01D1622370036F79A /* EventStream.swift */; };
-		9FCA99DA1D1622370036F79A /* FileEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA99C11D1622370036F79A /* FileEvent.swift */; };
-		9FCA99DB1D1622370036F79A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCA99C21D1622370036F79A /* Info.plist */; };
-		9FCA99DC1D1622370036F79A /* Witness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA99C41D1622370036F79A /* Witness.swift */; };
-		9FCA99F21D1622570036F79A /* Witness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCA99E71D1622370036F79A /* Witness.framework */; };
-		9FCA99F31D1622570036F79A /* Witness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCA99E71D1622370036F79A /* Witness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FE0BB4E1D18902E00FF2E03 /* DropitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE0BB4D1D18902E00FF2E03 /* DropitColor.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,27 +39,6 @@
 			remoteGlobalIDString = 9F65CD9F1D0A414F003968BC;
 			remoteInfo = dropit;
 		};
-		9FCA99E61D1622370036F79A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FDFA9CC41BB2A38B009E3E96;
-			remoteInfo = Witness;
-		};
-		9FCA99E81D1622370036F79A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FDFA9CCE1BB2A38B009E3E96;
-			remoteInfo = WitnessTests;
-		};
-		9FCA99F41D1622570036F79A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = FDFA9CC31BB2A38B009E3E96;
-			remoteInfo = Witness;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,7 +48,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9FCA99F31D1622570036F79A /* Witness.framework in Embed Frameworks */,
+				9FB2261F1D3227B60020509A /* SwiftFSWatcher.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,19 +68,13 @@
 		9F65CDC01D0A414F003968BC /* dropitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropitUITests.swift; sourceTree = "<group>"; };
 		9F65CDC21D0A414F003968BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F6C9E451D188BD900038073 /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		9FB2261D1D3227B60020509A /* SwiftFSWatcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftFSWatcher.framework; path = Frameworks/SwiftFSWatcher.framework; sourceTree = "<group>"; };
 		9FB9990C1D11E2760017658A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FB9990D1D11E2760017658A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FB9990F1D11E2760017658A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FB999111D11E2760017658A /* FileDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetectionView.swift; sourceTree = "<group>"; };
 		9FB999121D11E2760017658A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB999131D11E2760017658A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9FCA99BD1D1622370036F79A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9FCA99C01D1622370036F79A /* EventStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStream.swift; sourceTree = "<group>"; };
-		9FCA99C11D1622370036F79A /* FileEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEvent.swift; sourceTree = "<group>"; };
-		9FCA99C21D1622370036F79A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FCA99C31D1622370036F79A /* Witness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Witness.h; sourceTree = "<group>"; };
-		9FCA99C41D1622370036F79A /* Witness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Witness.swift; sourceTree = "<group>"; };
-		9FCA99C51D1622370036F79A /* Witness.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Witness.xcodeproj; sourceTree = "<group>"; };
 		9FE0BB4D1D18902E00FF2E03 /* DropitColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropitColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,8 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FCA99F21D1622570036F79A /* Witness.framework in Frameworks */,
 				9F0568591D1509C900A43F48 /* libstdc++.tbd in Frameworks */,
+				9FB2261E1D3227B60020509A /* SwiftFSWatcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +128,6 @@
 			children = (
 				9F560A921D172459009706ED /* Campaign.swift */,
 				9F05685A1D150BB400A43F48 /* SassProcessingService.swift */,
-				9FCA99BB1D1622370036F79A /* Witness */,
 				9FE0BB4D1D18902E00FF2E03 /* DropitColor.swift */,
 			);
 			name = Model;
@@ -169,6 +136,7 @@
 		9F65CD971D0A414F003968BC = {
 			isa = PBXGroup;
 			children = (
+				9FB2261D1D3227B60020509A /* SwiftFSWatcher.framework */,
 				9F0568581D1509C900A43F48 /* libstdc++.tbd */,
 				9FB9990B1D11E2760017658A /* dropit */,
 				9F65CDB41D0A414F003968BC /* dropitTests */,
@@ -219,37 +187,6 @@
 			path = dropit;
 			sourceTree = "<group>";
 		};
-		9FCA99BB1D1622370036F79A /* Witness */ = {
-			isa = PBXGroup;
-			children = (
-				9FCA99BD1D1622370036F79A /* LICENSE */,
-				9FCA99BF1D1622370036F79A /* Witness */,
-				9FCA99C51D1622370036F79A /* Witness.xcodeproj */,
-			);
-			path = Witness;
-			sourceTree = SOURCE_ROOT;
-		};
-		9FCA99BF1D1622370036F79A /* Witness */ = {
-			isa = PBXGroup;
-			children = (
-				9FCA99C01D1622370036F79A /* EventStream.swift */,
-				9FCA99C11D1622370036F79A /* FileEvent.swift */,
-				9FCA99C21D1622370036F79A /* Info.plist */,
-				9FCA99C31D1622370036F79A /* Witness.h */,
-				9FCA99C41D1622370036F79A /* Witness.swift */,
-			);
-			path = Witness;
-			sourceTree = "<group>";
-		};
-		9FCA99C61D1622370036F79A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9FCA99E71D1622370036F79A /* Witness.framework */,
-				9FCA99E91D1622370036F79A /* WitnessTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,7 +202,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9FCA99F51D1622570036F79A /* PBXTargetDependency */,
 			);
 			name = dropit;
 			productName = dropit;
@@ -343,12 +279,6 @@
 			mainGroup = 9F65CD971D0A414F003968BC;
 			productRefGroup = 9F65CDA11D0A414F003968BC /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9FCA99C61D1622370036F79A /* Products */;
-					ProjectRef = 9FCA99C51D1622370036F79A /* Witness.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				9F65CD9F1D0A414F003968BC /* dropit */,
@@ -358,31 +288,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		9FCA99E71D1622370036F79A /* Witness.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Witness.framework;
-			remoteRef = 9FCA99E61D1622370036F79A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9FCA99E91D1622370036F79A /* WitnessTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = WitnessTests.xctest;
-			remoteRef = 9FCA99E81D1622370036F79A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		9F65CD9E1D0A414F003968BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9FB999151D11E2760017658A /* Assets.xcassets in Resources */,
-				9FCA99D71D1622370036F79A /* LICENSE in Resources */,
-				9FCA99DB1D1622370036F79A /* Info.plist in Resources */,
 				9FB999161D11E2760017658A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FCA99D91D1622370036F79A /* EventStream.swift in Sources */,
 				9F560A931D172459009706ED /* Campaign.swift in Sources */,
 				9F05685B1D150BB400A43F48 /* SassProcessingService.swift in Sources */,
 				9FE0BB4E1D18902E00FF2E03 /* DropitColor.swift in Sources */,
@@ -416,9 +326,7 @@
 				9F6C9E461D188BD900038073 /* SuccessView.swift in Sources */,
 				9F50DDC31D224A43007AEAD9 /* NSBezierPathExtension.swift in Sources */,
 				9FB9991A1D11E2760017658A /* ViewController.swift in Sources */,
-				9FCA99DC1D1622370036F79A /* Witness.swift in Sources */,
 				9FB999141D11E2760017658A /* AppDelegate.swift in Sources */,
-				9FCA99DA1D1622370036F79A /* FileEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,11 +358,6 @@
 			isa = PBXTargetDependency;
 			target = 9F65CD9F1D0A414F003968BC /* dropit */;
 			targetProxy = 9F65CDBD1D0A414F003968BC /* PBXContainerItemProxy */;
-		};
-		9FCA99F51D1622570036F79A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Witness;
-			targetProxy = 9FCA99F41D1622570036F79A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -560,6 +463,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = "${SRCROOT}/libsass/include";
 				INFOPLIST_FILE = dropit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -587,6 +494,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = "${SRCROOT}/libsass/include";
 				INFOPLIST_FILE = dropit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

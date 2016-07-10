@@ -8,31 +8,31 @@
 
 import Cocoa
 import Witness
+import SwiftFSWatcher
 
 class ViewController: NSViewController, fileDetectionViewDeledate {
 	
 	@IBOutlet var fileDetection: FileDetectionView!
 	
-	var witness: Witness?
-	var witnessList: [String] = []
+	let fileWatcher = SwiftFSWatcher()
+	var campaignList: [Campaign] = []
 	
 	func createCampaign(filePath: String) -> Campaign {
 		let newCampaign = Campaign(inputPath: filePath)
-		witnessList.appendContentsOf(newCampaign.fileList)
-		watchFile(newCampaign)
+		campaignList.append(newCampaign)
 		return newCampaign
 	}
 	
-	func watchFile(campaign: Campaign) {
-		let sassProcessingService: SassProcessingService = SassProcessingService()
-		for file: String in campaign.fileList {
-			sassProcessingService.compileRawFile(file)
-		}
-		self.witness = Witness(paths: self.witnessList, flags: .FileEvents, latency: 0.3) { events in
-			if ((events.first?.flags.contains(FileEventFlags.ItemModified)) != nil) {
-				print(events.first?.path)
-				sassProcessingService.compileRawFile((events.first?.path)!)
-			}
+	func trackCampaignWithPath(path: String) {
+		let url = NSURL(fileURLWithPath: path)
+		let getImagePath = url.URLByAppendingPathComponent("SavedFile.jpg")
+		
+		let checkValidation = NSFileManager.defaultManager()
+		
+		if (checkValidation.fileExistsAtPath("\(getImagePath)")) {
+			print("FILE AVAILABLE");
+		} else {
+			print("FILE NOT AVAILABLE");
 		}
 	}
 
