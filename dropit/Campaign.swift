@@ -21,16 +21,16 @@ class Campaign: NSObject {
 		self.fileList = populateInputFileList()
 		let sassProcessingService: SassProcessingService = SassProcessingService()
 		for file: String in self.fileList {
-			sassProcessingService.compileRawFile(file)
+			sassProcessingService.compileRawFile(file, campaign: self)
 		}
 		fileWatcher.watchingPaths = self.fileList
 		fileWatcher.watch { changeEvents in
 			for ev in changeEvents {
-				print("eventPath: \(ev.eventPath), eventFlag: \(ev.eventFlag), eventId: \(ev.eventId)")
+//				print("eventPath: \(ev.eventPath), eventFlag: \(ev.eventFlag), eventId: \(ev.eventId)")
 				
 				if ev.eventFlag == (kFSEventStreamEventFlagItemIsFile + kFSEventStreamEventFlagItemInodeMetaMod + kFSEventStreamEventFlagItemModified) {
-					print("file modified at: \(ev.eventPath)")
-					sassProcessingService.compileRawFile(ev.eventPath)
+//					print("file modified at: \(ev.eventPath)")
+					sassProcessingService.compileRawFile(ev.eventPath, campaign: self)
 					
 				}
 			}

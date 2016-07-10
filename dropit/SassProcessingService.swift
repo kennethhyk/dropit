@@ -12,7 +12,7 @@ import libsass
 
 class SassProcessingService {
 	
-	func compileRawFile (filePath: String) {
+	func compileRawFile (filePath: String, campaign: Campaign) {
 		var inputFilePath: String
 		var outputFileName: String
 		
@@ -42,25 +42,36 @@ class SassProcessingService {
 			var path = NSURL(fileURLWithPath: inputFilePath).URLByDeletingLastPathComponent
 			print("inspect why optional value \(path?.absoluteURL)")//optional value? why?
 			path = NSURL(fileURLWithPath: (path!.absoluteString)).URLByAppendingPathComponent(outputFileName)
-//			campaign.campaignStatus = Campaign.CampaignStatusEnum.PENDING
+			campaign.campaignStatus = Campaign.CampaignStatusEnum.PENDING
 			
 			//writing
 			do {
 				try String.fromCString(sass_context_get_output_string(ctx))!.writeToURL(path!, atomically: false, encoding: NSUTF8StringEncoding)
-//				campaign.campaignStatus = Campaign.CampaignStatusEnum.SUCCEED
+				campaign.campaignStatus = Campaign.CampaignStatusEnum.SUCCEED
+				sendNotification("Succeeded", body: "Dropit | \(inputFilePath)")
 			}
 			catch {
 				print("error processing SASS/SCSS file")
-//				campaign.campaignStatus = Campaign.CampaignStatusEnum.ERROR
+				campaign.campaignStatus = Campaign.CampaignStatusEnum.ERROR
+				sendNotification("Error", body: "Dropit | \(inputFilePath)")
 			}
 			
 		}
 		else {
 			puts(sass_context_get_error_message(ctx))
-//			campaign.campaignStatus = Campaign.CampaignStatusEnum.ERROR
+			campaign.campaignStatus = Campaign.CampaignStatusEnum.ERROR
+			sendNotification("Error", body: "Error | \(inputFilePath)")
 		}
 		
 		sass_delete_file_context(file_ctx)
+	}
+	
+	func sendNotification(title: String, body: String) -> Void {
+		let notification = NSUserNotification()
+		notification.title = title
+		notification.informativeText = body
+		notification.soundName = NSUserNotificationDefaultSoundName
+		NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
 	}
 	
 	

@@ -23,19 +23,6 @@ class ViewController: NSViewController, fileDetectionViewDeledate {
 		return newCampaign
 	}
 	
-	func trackCampaignWithPath(path: String) {
-		let url = NSURL(fileURLWithPath: path)
-		let getImagePath = url.URLByAppendingPathComponent("SavedFile.jpg")
-		
-		let checkValidation = NSFileManager.defaultManager()
-		
-		if (checkValidation.fileExistsAtPath("\(getImagePath)")) {
-			print("FILE AVAILABLE");
-		} else {
-			print("FILE NOT AVAILABLE");
-		}
-	}
-
 /*=========== System Callbacks ============*/
 	override func viewDidLoad() {
 		super.viewDidLoad()

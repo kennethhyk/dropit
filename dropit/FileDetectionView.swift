@@ -70,6 +70,8 @@ class FileDetectionView: NSView {
 			let campaign = self.delegate?.createCampaign(filePath)
 			if (campaign?.campaignStatus == Campaign.CampaignStatusEnum.SUCCEED) {
 				successView.processSucceedAnimation()
+			} else {
+				successView.processFailureAnimation()
 			}
 			return true
 		}
