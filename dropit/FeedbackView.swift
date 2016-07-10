@@ -1,5 +1,5 @@
 //
-//  successView.swift
+//  FeedbackView.swift
 //  dropit
 //
 //  Created by Kenneth on 2016-06-20.
@@ -9,7 +9,7 @@
 import Cocoa
 import AppKit
 
-class SuccessView: NSView {
+class FeedbackView: NSView {
 	
 	let circleRadius: CGFloat = 80.0
 	let circlePathLayer = CAShapeLayer()

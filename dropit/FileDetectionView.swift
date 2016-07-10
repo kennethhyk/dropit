@@ -13,7 +13,7 @@ class FileDetectionView: NSView {
 	
 	var filePath: String = ""
 	var delegate: fileDetectionViewDeledate?
-	var successView: SuccessView = SuccessView(frame: CGRectMake(0, 0, 300 ,300))
+	var feedbackView: FeedbackView = FeedbackView(frame: CGRectMake(0, 0, 300 ,300))
 	@IBOutlet weak var backgroundImage: NSImageView!
 	@IBOutlet weak var consoleLabel: NSTextField!
 	
@@ -40,9 +40,9 @@ class FileDetectionView: NSView {
 	override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation {
 		if isValidDrop(sender) {
 			fileTypeIsOk = true
-			successView.removeFromSuperview()
-			successView = SuccessView(frame: CGRectMake(0, 0, 300 ,300))
-			self.addSubview(successView)
+			feedbackView.removeFromSuperview()
+			feedbackView = FeedbackView(frame: CGRectMake(0, 0, 300 ,300))
+			self.addSubview(feedbackView)
 			return .Copy
 		} else {
 			fileTypeIsOk = false
@@ -59,7 +59,7 @@ class FileDetectionView: NSView {
 	}
 	
 	override func draggingExited(sender: NSDraggingInfo?) {
-		successView.reverseCircle()
+		feedbackView.reverseCircle()
 	}
 	
 	override func performDragOperation(sender: NSDraggingInfo) -> Bool {
@@ -69,9 +69,9 @@ class FileDetectionView: NSView {
 			filePath = path
 			let campaign = self.delegate?.createCampaign(filePath)
 			if (campaign?.campaignStatus == Campaign.CampaignStatusEnum.SUCCEED) {
-				successView.processSucceedAnimation()
+				feedbackView.processSucceedAnimation()
 			} else {
-				successView.processFailureAnimation()
+				feedbackView.processFailureAnimation()
 			}
 			return true
 		}
