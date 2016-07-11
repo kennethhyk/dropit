@@ -14,4 +14,5 @@ class CampaignView: NSView {
         super.drawRect(dirtyRect)
 		// Drawing code here.
     }
+	
 }
