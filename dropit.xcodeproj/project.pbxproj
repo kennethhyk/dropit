@@ -14,6 +14,7 @@
 		9F65CDB61D0A414F003968BC /* dropitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDB51D0A414F003968BC /* dropitTests.swift */; };
 		9F65CDC11D0A414F003968BC /* dropitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65CDC01D0A414F003968BC /* dropitUITests.swift */; };
 		9F6C9E461D188BD900038073 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C9E451D188BD900038073 /* FeedbackView.swift */; };
+		9F9D4BE91D3318FF001B5581 /* CampaignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D4BE81D3318FF001B5581 /* CampaignView.swift */; };
 		9FB2261E1D3227B60020509A /* SwiftFSWatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB2261D1D3227B60020509A /* SwiftFSWatcher.framework */; };
 		9FB2261F1D3227B60020509A /* SwiftFSWatcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB2261D1D3227B60020509A /* SwiftFSWatcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FB999141D11E2760017658A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB9990C1D11E2760017658A /* AppDelegate.swift */; };
@@ -68,6 +69,7 @@
 		9F65CDC01D0A414F003968BC /* dropitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropitUITests.swift; sourceTree = "<group>"; };
 		9F65CDC21D0A414F003968BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F6C9E451D188BD900038073 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		9F9D4BE81D3318FF001B5581 /* CampaignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignView.swift; sourceTree = "<group>"; };
 		9FB2261D1D3227B60020509A /* SwiftFSWatcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftFSWatcher.framework; path = Frameworks/SwiftFSWatcher.framework; sourceTree = "<group>"; };
 		9FB9990C1D11E2760017658A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FB9990D1D11E2760017658A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				9FB999111D11E2760017658A /* FileDetectionView.swift */,
 				9F6C9E451D188BD900038073 /* FeedbackView.swift */,
 				9F50DDC21D224A43007AEAD9 /* NSBezierPathExtension.swift */,
+				9F9D4BE81D3318FF001B5581 /* CampaignView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				9F560A931D172459009706ED /* Campaign.swift in Sources */,
 				9F05685B1D150BB400A43F48 /* SassProcessingService.swift in Sources */,
 				9FE0BB4E1D18902E00FF2E03 /* DropitColor.swift in Sources */,
+				9F9D4BE91D3318FF001B5581 /* CampaignView.swift in Sources */,
 				9FB999181D11E2760017658A /* FileDetectionView.swift in Sources */,
 				9F6C9E461D188BD900038073 /* FeedbackView.swift in Sources */,
 				9F50DDC31D224A43007AEAD9 /* NSBezierPathExtension.swift in Sources */,

@@ -27,6 +27,8 @@ class ViewController: NSViewController, fileDetectionViewDeledate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		fileDetection.delegate = self
+		let campaignView = CampaignView(frame: CGRectMake(0, 0, 300, 300))
+		super.view.addSubview(campaignView)
 	}
 	
 	override func viewDidAppear() {
